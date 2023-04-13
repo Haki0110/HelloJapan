@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFFFFFFF"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineVert1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guiLineHoz1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="60dp"
+        />
+    <androidx.viewpager2.widget.ViewPager2
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/alphabetPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideLineVert1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintTop_toBottomOf="@id/guiLineHoz1"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="15dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <RadioButton
+            android:paddingStart="2dp"
+            android:textSize="16sp"
+            android:textColor="#A6000000"
+            android:gravity="center"
+            android:id="@+id/btnHiragana"
+            android:text="@string/hiragana"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@drawable/btn_left"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:textSize="16sp"
+            android:textColor="#A6000000"
+            android:gravity="center"
+            android:id="@+id/btnKatakana"
+            android:text="@string/katakana"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@drawable/btn_right"
+            />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
